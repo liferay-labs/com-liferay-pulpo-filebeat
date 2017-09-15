@@ -6,3 +6,5 @@ COPY filebeat.yml /usr/share/filebeat/filebeat.yml
 USER root
 
 RUN chmod go-w /usr/share/filebeat/filebeat.yml
+
+CMD ./filebeat -c /usr/share/filebeat/filebeat.yml
