@@ -19,9 +19,7 @@ install:
     - docker tag "${PWD##*/}" cgoncas/"${PWD##*/}"
     - docker tag "${PWD##*/}" cgoncas/"${PWD##*/}":`date +%Y%m%d%H%M%S`
 
-script: true
-
-after_success:
+script:
     - 'if [ "$TRAVIS_EVENT_TYPE" = "push" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
            docker push cgoncas/"${PWD##*/}";
        fi'
