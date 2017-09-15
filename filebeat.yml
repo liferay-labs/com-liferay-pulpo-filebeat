@@ -22,17 +22,17 @@ filebeat.prospectors:
 
 #================================ General ======================================
 
-tags: '${PULPO_CONTACTS_ENGINE_BEAT_TAGS}'
+tags: '${PULPO_FILEBEAT_TAGS}'
 
 fields:
-  env: '${PULPO_CONTACTS_ENGINE_BEAT_ENV}'
-  service: '${PULPO_CONTACTS_ENGINE_BEAT_SERVICE}'
+  env: '${PULPO_FILEBEAT_ENV}'
+  service: '${PULPO_FILEBEAT_SERVICE}'
 
 #================================ Outputs ======================================
 
 #-------------------------- Elasticsearch output -------------------------------
 output.elasticsearch:
-  hosts: '${PULPO_CONTACTS_ENGINE_BEAT_ES_HOSTS}'
+  hosts: '${PULPO_FILEBEAT_ES_HOSTS}'
 
 output.console:
   enabled: false
