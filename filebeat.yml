@@ -13,11 +13,10 @@ filebeat.prospectors:
   paths:
     - /var/log/aws/*.log
     - /var/log/aws/containers/*.log
+    - /var/log/aws/containers/*/*.log
 
   multiline.pattern: '^%{TIME}'
-
   multiline.negate: false
-
   multiline.match: after
 
 #================================ General ======================================
