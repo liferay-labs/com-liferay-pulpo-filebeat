@@ -8,16 +8,17 @@
 filebeat.prospectors:
 
 #------------------------------ Log prospector --------------------------------
-- input_type: json
+filebeat.prospectors:
+- input_type: log
   paths:
-    - /var/log/aws/containers/*/*.log
-  fields_under_root: true
+   - /var/log/aws/containers/*/*.log
+  json.keys_under_root: true
+  json.add_error_key: true
 
 - input_type: log
   paths:
     - /var/log/aws/*.log
     - /var/log/aws/containers/*.log
-    - /var/log/aws/containers/*/*.log
 
   multiline.pattern: '^[[:space:]]+|^Caused by:'
   multiline.negate: false
