@@ -12,6 +12,8 @@ filebeat.prospectors:
 - input_type: log
   paths:
    - /var/log/aws/containers/*/*.log
+   - /var/log/aws/eb-ecs-mgr.log
+
   json.keys_under_root: true
   json.add_error_key: true
 
@@ -19,6 +21,8 @@ filebeat.prospectors:
   paths:
     - /var/log/aws/*.log
     - /var/log/aws/containers/*.log
+
+  exclude_files: [".*eb-ecs-mgr.*"]
 
   multiline.pattern: '^[[:space:]]+|^Caused by:'
   multiline.negate: false
